@@ -1,0 +1,264 @@
+# key:
+#     'in' and 'out' means curling your finger in, i.e. thumbs are backwards
+#
+#               left      right
+#             ┌───────┐ ┌───────┐
+#           ╔═╬═╬═╬═╬═╬═╬═╬═╬═╬═╬═╗ thumb keys:
+#      out ═╬═a b c d e f g h i j═╬═ out lower
+#       in ═╬═k l m n o p q r s t═╬═ in upper
+#       up ═╬═u v w x y z . , ; /═╬═ out upper
+#     down ═╬═1 2 3 4 5 6 7 8 9 0═╬═ pad
+#   center ═╬═! @ # $ % ^ & * ( )═╬═ in lower
+#           ╚═╬═╬═╬═╣ [ ]═╬═╬═╬═╬═╩═ hidden
+#             p r m ╠═╬═╬═╣ m r p
+#                   i t t i
+#
+keyboard:
+  matrix_positions:
+    - [[1,0], [2,0], [3,0], [4,0], [5,0],   [6,0], [7,0], [8,0], [9,0], [10,0]]
+    - [[1,1], [2,1], [3,1], [4,1], [5,1],   [6,1], [7,1], [8,1], [9,1], [10,1]]
+    - [[1,2], [2,2], [3,2], [4,2], [5,2],   [6,2], [7,2], [8,2], [9,2], [10,2]]
+    - [[1,3], [2,3], [3,3], [4,3], [5,3],   [6,3], [7,3], [8,3], [9,3], [10,3]]
+    - [[1,4], [2,4], [3,4], [4,4], [5,4],   [6,4], [7,4], [8,4], [9,4], [10,4]]
+    - [[5,5], [6,5]]
+
+  symmetries:
+    - [  1,  2,  3,  4,  5,   5,  4,  3,  2,  1  ]
+    - [  6,  7,  8,  9, 10,   10, 9,  8,  7,  6  ]
+    - [ 11, 12, 13, 14, 15,   15, 14, 13, 12, 11 ]
+    - [ 16, 17, 18, 19, 20,   20, 19, 18, 17, 16 ]
+    - [ 21, 22, 23, 24, 25,   25, 24, 23, 22, 21 ]
+    - [ 26, 26]
+
+  hands:
+    - [Left, Left, Left, Left, Left,    Right, Right, Right, Right, Right]
+    - [Left, Left, Left, Left, Left,    Right, Right, Right, Right, Right]
+    - [Left, Left, Left, Left, Left,    Right, Right, Right, Right, Right]
+    - [Left, Left, Left, Left, Left,    Right, Right, Right, Right, Right]
+    - [Left, Left, Left, Left, Left,    Right, Right, Right, Right, Right]
+    - [Left, Right]
+
+  fingers:
+    - [Pinky, Ring, Middle, Index, Thumb,   Thumb, Index, Middle, Ring, Pinky]
+    - [Pinky, Ring, Middle, Index, Thumb,   Thumb, Index, Middle, Ring, Pinky]
+    - [Pinky, Ring, Middle, Index, Thumb,   Thumb, Index, Middle, Ring, Pinky]
+    - [Pinky, Ring, Middle, Index, Thumb,   Thumb, Index, Middle, Ring, Pinky]
+    - [Pinky, Ring, Middle, Index, Thumb,   Thumb, Index, Middle, Ring, Pinky]
+    - [Thumb, Thumb]
+
+  finger_resting_positions:
+    Left:
+      Pinky:  [ 50, 100]
+      Ring:   [100, 100]
+      Middle: [150, 100]
+      Index:  [200, 100]
+      Thumb:  [250,  70]
+    Right:
+      Pinky:  [600, 100]
+      Ring:   [550, 100]
+      Middle: [500, 100]
+      Index:  [450, 100]
+      Thumb:  [400,  70]
+
+  # for the thumbs I'm doing a lot of weird arbitrary skewing; the structure is very 3d and this software is very not. cmon guys that's
+  # totally a normal thing on keyboards, you should have accounted for it ;_;
+  # and I really, really, REALLY hope this is all correct, here be dragons
+  positions:
+    - [[30, 100], [ 80, 100], [130, 100], [180, 100], [270, 60],   [420, 60], [470, 100], [520, 100], [570, 100], [620, 100]]
+    - [[70, 100], [120, 100], [170, 100], [220, 100], [230, 75],   [420, 75], [430, 100], [480, 100], [530, 100], [580, 100]]
+    - [[50, 120], [100, 120], [150, 120], [200, 120], [265, 70],   [375, 70], [450, 120], [500, 120], [550, 120], [600, 120]]
+    - [[50,  80], [100,  80], [150,  80], [200,  80], [250, 70],   [400, 70], [450,  80], [500,  80], [550,  80], [600,  80]]
+    - [[50, 100], [100, 100], [150, 100], [200, 100], [250, 65],   [400, 65], [450, 100], [500, 100], [550, 100], [600, 100]]
+    - [[250, 40], [400, 40]]
+
+  key_costs:
+    - [ 32, 28, 20, 16, 29,   29, 16, 20, 28, 32]
+    - [ 30, 26, 18, 13, 20,   20, 13, 18, 26, 30]
+    - [ 17, 15,  9,  8, 13,   13,  8,  9, 15, 17]
+    - [ 11,  7,  3,  3,  3,    3,  3,  3,  7, 11] # I honestly think down is exactly as easy as center
+    - [  9,  6,  3,  3,  2,    2,  3,  3,  6,  9]
+    - [ 50, 50]
+
+  unbalancing_positions: # thumbs aren't keyed in, but it's pretty hard to unbalance on a keyboard where your hands don't move anyway
+    - [[ -1,  0], [ -1,  0], [-0.5, 0], [  0,  0], [  0,  0],   [  0,  0], [  0,  0], [0.5,  0], [  1,  0], [  1,  0]]
+    - [[  1,  0], [  1,  0], [0.5,  0], [  0,  0], [  0,  0],   [  0,  0], [  0,  0], [-0.5, 0], [ -1,  0], [ -1,  0]]
+    - [[-0.5,-1], [  0,  0], [  0,  0], [  0,  0], [  0,  0],   [  0,  0], [  0,  0], [  0,  0], [  0,  0], [0.5,  1]]
+    - [[  0,  0], [  0,  0], [  0,  0], [  0,  0], [  0,  0],   [  0,  0], [  0,  0], [  0,  0], [  0,  0], [  0,  0]]
+    - [[-0.5, 0], [  0,  0], [  0,  0], [  0,  0], [  0,  0],   [  0,  0], [  0,  0], [  0,  0], [  0,  0], [0.5,  0]]
+    - [[  0,  0], [  0,  0]]
+
+  #                       ┌───┐                          ┌───┐
+  #                       │ 22│                          │ 27│
+  #                   ┌───┼───┼───┐                  ┌───┼───┼───┐
+  #                   │ 2 │ 42│ 12│                  │ 17│ 47│ 7 │
+  #                   └───┼───┼───┘                  └───┼───┼───┘
+  #              ┌───┐    │ 32│    ┌───┐        ┌───┐    │ 37│    ┌───┐
+  #              │ 21│    └───┘    │ 23│        │ 26│    └───┘    │ 28│
+  #          ┌───┼───┼───┐     ┌───┼───┼───┐┌───┼───┼───┐     ┌───┼───┼───┐
+  #          │ 1 │ 41│ 11│     │ 3 │ 43│ 13││ 16│ 46│ 6 │     │ 18│ 48│ 8 │
+  #          └───┼───┼───┘     └───┼───┼───┘└───┼───┼───┘     └───┼───┼───┘
+  #     ┌───┐    │ 31│             │ 33│        │ 36│             │ 38│    ┌───┐
+  #     │ 20│    └───┘             └───┘        └───┘             └───┘    │ 29│
+  # ┌───┼───┼───┐     ┌───┐   ┌───┐                  ┌───┐   ┌───┐     ┌───┼───┼───┐
+  # │ 0 │ 40│ 10│     │ 14├───┤ 24│                  │ 25├───┤ 15│     │ 19│ 49│ 9 │
+  # └───┼───┼───┘     ├───┤ 34├───┤                  ├───┤ 35├───┤     └───┼───┼───┘
+  #     │ 30│         │ 44├───┤ 4 │                  │ 5 ├───┤ 45│         │ 39│
+  #     └───┘         └───┤ 50├───┘                  └───┤ 51├───┘         └───┘
+  #                       └───┘                          └───┘
+  plot_template: |1
+                                   left      right
+                                 ┌───────┐ ┌───────┐
+                               ╔═╬═╬═╬═╬═╬═╬═╬═╬═╬═╬═╗ thumb keys:
+                          out ═╬═{{0}} {{1}} {{2}} {{3}} {{4}} {{5}} {{6}} {{7}} {{8}} {{9}}═╬═ out lower
+                           in ═╬═{{10}} {{11}} {{12}} {{13}} {{14}} {{15}} {{16}} {{17}} {{18}} {{19}}═╬═ in upper
+                           up ═╬═{{20}} {{21}} {{22}} {{23}} {{24}} {{25}} {{26}} {{27}} {{28}} {{29}}═╬═ out upper
+                         down ═╬═{{30}} {{31}} {{32}} {{33}} {{34}} {{35}} {{36}} {{37}} {{38}} {{39}}═╬═ pad
+                       center ═╬═{{40}} {{41}} {{42}} {{43}} {{44}} {{45}} {{46}} {{47}} {{48}} {{49}}═╬═ in lower
+                               ╚═╬═╬═╬═╣ {{50}} {{51}}═╬═╬═╬═╬═╩═ hidden
+                          ┌───┐  p r m ╠═╬═╬═╣ m r p     ┌───┐
+                          │ {{22}} │        i t t i           │ {{27}} │
+                      ┌───┼───┼───┐                  ┌───┼───┼───┐
+                      │ {{2}} │ {{42}} │ {{12}} │                  │ {{17}} │ {{47}} │ {{7}} │
+                      └───┼───┼───┘                  └───┼───┼───┘
+                 ┌───┐    │ {{32}} │    ┌───┐        ┌───┐    │ {{37}} │    ┌───┐
+                 │ {{21}} │    └───┘    │ {{23}} │        │ {{26}} │    └───┘    │ {{28}} │
+             ┌───┼───┼───┐     ┌───┼───┼───┐┌───┼───┼───┐     ┌───┼───┼───┐
+             │ {{1}} │ {{41}} │ {{11}} │     │ {{3}} │ {{43}} │ {{13}} ││ {{16}} │ {{46}} │ {{6}} │     │ {{18}} │ {{48}} │ {{8}} │
+             └───┼───┼───┘     └───┼───┼───┘└───┼───┼───┘     └───┼───┼───┘
+        ┌───┐    │ {{31}} │             │ {{33}} │        │ {{36}} │             │ {{38}} │    ┌───┐
+        │ {{20}} │    └───┘             └───┘        └───┘             └───┘    │ {{29}} │
+    ┌───┼───┼───┐     ┌───┐   ┌───┐                  ┌───┐   ┌───┐     ┌───┼───┼───┐
+    │ {{0}} │ {{40}} │ {{10}} │     │ {{14}} ├───┤ {{24}} │                  │ {{25}} ├───┤ {{15}} │     │ {{19}} │ {{49}} │ {{9}} │
+    └───┼───┼───┘     ├───┤ {{34}} ├───┤                  ├───┤ {{35}} ├───┤     └───┼───┼───┘
+        │ {{30}} │         │ {{44}} ├───┤ {{4}} │                  │ {{5}} ├───┤ {{45}} │         │ {{39}} │
+        └───┘         └───┤ {{50}} ├───┘                  └───┤ {{51}} ├───┘         └───┘
+                          └───┘                          └───┘
+
+
+  plot_template_short: |1
+base_layout:
+  keys:
+
+
+
+    # Row 0: out
+    - - ["\\", "|"]
+      - ["("]
+      - ["`", "~"]
+      - ["z", "Z"]
+      - ["0"] # thmb
+      - ["1"] # thmb
+      - ["m", "M"]
+      - ["=", "+"]
+      - [")"]
+      - ["'", "\""]
+
+        # Row 1: in
+    - - ["~"] # escape
+      - ["[", "{"]
+      - [",", "<"]
+      - ["g", "G"]
+      - ["2"] # thmb
+      - ["3"] # thmb
+      - ["k", "K"]
+      - [".", ">"]
+      - ["]", "}"]
+      - [";", ":"]
+
+
+        # Row 2: up
+    - - ["/", "?"]
+      - ["w", "W"]
+      - ["f", "F"]
+      - ["p", "P"]
+      - ["4"] # thmb
+      - ["5"] # thmb
+      - ["l", "L"]
+      - ["u", "U"]
+      - ["y", "Y"]
+      - ["-", "_"]
+
+
+        # Row 3: down
+    - - ["q", "Q"]
+      - ["x", "X"]
+      - ["c", "C"]
+      - ["d", "D"]
+      - ["6"] # thmb
+      - ["7"] # thmb
+      - ["h", "H"]
+      - ["j", "J"]
+      - ["v", "V"]
+      - ["b", "B"]
+
+
+        # Row 4: center
+    - - ["a", "A"]
+      - ["r", "R"]
+      - ["s", "S"]
+      - ["t", "T"]
+      - ["8"] # thmb
+      - ["9"] # thmb
+      - ["n", "N"]
+      - ["e", "E"]
+      - ["i", "I"]
+      - ["o", "O"]
+
+        # sneaky one
+    - - ["<"] # thmb
+      - [">"] # thmb
+
+
+
+  fixed_keys:
+    - [ true,  true,  true, false,  true,    true, false,  true,  true,  true]
+    - [ true,  true,  true, false,  true,    true, false,  true,  true,  true]
+    - [ true, false, false, false,  true,    true, false, false, false,  true]
+    - [false, false, false, false,  true,    true, false, false, false, false]
+    - [false, false, false, false,  true,    true, false, false, false, false]
+    - [true, true]
+  # for NeoLayoutGenerator:
+  # layers that shall not be permutated (starting from 0)
+  fixed_layers: [2, 3]
+
+  # for GroupedLayoutGenerator:
+  # number of consecutive symbols from base layout to group together generating a layout
+  grouped_layers: 2
+
+  modifiers:
+    - Left:
+        type: hold
+        value: [[5,0]]
+      Right:
+        type: hold
+        value: [[6,0]]
+    - Left:
+        type: hold
+        value: [[5,1]]
+      Right:
+        type: hold
+        value: [[6,1]]
+    - Left:
+        type: hold
+        value: [[5,2]]
+      Right:
+        type: hold
+        value: [[6,2]]
+    - Left:
+        type: hold
+        value: [[5,3]]
+      Right:
+        type: hold
+        value: [[6,3]]
+    - Left:
+        type: hold
+        value: [[5,4]]
+      Right:
+        type: hold
+        value: [[6,4]]
+    - Left:
+        type: hold
+        value: [[5,5]]
+      Right:
+        type: hold
+        value: [[6,5]]
